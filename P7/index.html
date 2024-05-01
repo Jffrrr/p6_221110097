@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/dist/css/bootstrap.min.css">
+    <link href="carousel.css" rel="stylesheet">
+    <script src="../assets/js/color-modes.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: antiquewhite;
+      }
+      .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.nav-pills {
+    --bs-nav-pills-border-radius: var(--bs-border-radius);
+    --bs-nav-pills-link-active-color: #fff;
+    --bs-nav-pills-link-active-bg: #0d6efd;
+}
+.nav {
+    --bs-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(--bs-link-color);
+    --bs-nav-link-hover-color: var(--bs-link-hover-color);
+    --bs-nav-link-disabled-color: var(--bs-secondary-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.hero{
+  background-image: url(./assets/img/home.jpeg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+
+}
+.hero .content{
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+.hero .content h1{
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span{
+  color:burlywood;
+}
+.hero .content p{
+  font-size: 2rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  color: #fff;
+}
+.hero .content .cta{
+  text-decoration: none;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: burlywood;
+  font-size: 1.2rem;
+  color:#fff;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+a{
+  text-decoration: none;
+}
+.content h1{
+    color: #2b2b2b;
+    text-align: center;
+    margin-top: 40px;
+    transform: translateY(30px);
+}
+.content .wrapper{
+    width: 60vw;
+    height: 75vh;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    margin: 5rem auto;
+    overflow: hidden;
+}
+
+.content .wrapper-holder{
+    display: grid;
+    grid-template-columns: repeat(4, 100%);
+    height: 100%;
+    width: 100%;
+    animation: slider 30s ease-in-out infinite alternate;
+}
+
+.content #slider-img-1{
+    background-image: url(./assets/img/lm1.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.content #slider-img-2{
+    background-image: url(./assets/img/lm2.png);
+    background-position: center;
+    background-size: cover;
+}
+.content #slider-img-3{
+    background-image: url(./assets/img/lm3.png);
+    background-position: center;
+    background-size: cover;
+}
+.content #slider-img-4{
+    background-image: url(./assets/img/lm4.png);
+    background-position: center;
+    background-size: cover;
+}
+.content .button-holder .button{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius:  15px;
+    display: inline-block;
+    margin: .3rem;
+}
+.content .button-holder{
+    position: absolute;
+    left: 45%;
+    bottom: 0%;
+}
+.button:hover{
+    box-shadow: 0px 0px 7px 4px rgba(0, 255, 255, 0.6);
+}
+@keyframes slider{
+    0%{transform: translateX(0%);}
+    10%{transform: translateX(-100%);}
+    20%{transform: translateX(-100%);}
+    30%{transform: translateX(-200%);}
+    40%{transform: translateX(-200%);}
+    50%{transform: translateX(-200%);}
+    60%{transform: translateX(-300%);}
+    70%{transform: translateX(-300%);}
+    80%{transform: translateX(-300%);}
+    90%{transform: translateX(0%);}
+    1000%{transform: translateX(0%);}
+}
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.gallery .content{
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(1, 1, 3, 0.5),
+  0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: .4s;
+  background: #f2f2f2;
+}
+.gallery .content:hover{
+    box-shadow:  0 rpx 6px rgba(0,0,0,0.16),
+    0 3p 6px rgba(0,0,0,0.23);
+    transform: translate(0px, -8px);
+}
+img{
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.gallery .content p{
+  text-align: center;
+  color: #b2bec3;
+  padding-top: 0 8px;
+}
+h6{
+  font-size: large;
+  text-align: center;
+  color:  #222f3e;
+  margin: auto;
+}
+button{
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: burlywood;
+}
+.about{
+    background-color: white;
+    background-size: contain;
+    border-style:outset;
+    border-radius:  20px;
+    color: #2b2b2b;
+    width: 80%;
+    margin: auto;
+}
+
+.about .row .col {
+    border-radius: 5px;
+    border-color: #191919;
+}
+
+.contact{
+    background: linear-gradient(antiquewhite 0%,white 100%);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2. 2fr);
+    align-items: center;
+    padding: 10px;
+}
+
+.contact-form h1{
+    font-size: 60px;
+    color: #1c1c1c;
+    margin-bottom: 20px;
+}
+
+.contact-form p{
+    color : #4a4a4a;
+    letter-spacing: 1px;
+    line-height: 26px;
+    font-size: 1.1rem;
+    margin-bottom: 3.8rem;
+}
+
+.contact-form p i{
+    color: #4a4a4a;
+    transition: 0.6s;
+}
+.contact-form form{
+    position: relative;
+}
+.contact-form form input, form textarea{
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    background: white;
+    color: #191919;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    border-radius: 10px;
+}
+
+.contact-form textarea{
+    resize: none;
+    height: 260px;
+    background: linear-gradient(white 0%, burlywood 100%)
+}
+.contact-form form .btn{
+    display: inline-block;
+    color: white;
+    background: #0f53e5;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    width: 220px;
+    transition: ease .20s;
+    cursor: pointer;
+}
+.contact-form form .btn:hover{
+  color: #0f53e5;
+    border: 2px solid #0f53e5;
+    background: transparent;
+    transform: scale(1.0);
+}
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  font-weight: bold;
+}
+
+.img-categori:hover {
+  transform: scale(1.2);
+}
+
+.img-categori {
+  width: 80px;
+}
+
+.row-container {
+  background-color: #fff;
+  margin: auto;
+  justify-content: center;
+}
+
+.card:hover {
+  border: 2px solid #2d2d2d;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.cards-wrapper {
+  display: flex;
+}
+
+#carouselExampleControls {
+  margin-top: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 0 15px;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+.social{
+    text-align: center;
+    padding: 0;
+    color:#1c1c1c;
+}
+.social li{
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social i{
+    color: #1c1c1c;
+    font-size: large;
+}
+.social i a{
+    text-decoration: none;
+}
+.social i a:hover{
+    color:#0f53e5;
+}
+.social i:hover{
+    color: #0f53e5;
+}
+
+    </style>
+        
+</head>
+<body>
+  <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#produk" class="nav-link">Product</a></li>
+        <li class="nav-item"><a href="#faq" class="nav-link">FAQS</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="./New folder/login.html" class="nav-link">Login |</a></li>
+      </ul>
+      
+    </header>
+  </div>
+  <section class="hero" id="home">
+    <main class="content">
+      <h1>Calceus <span>Store</span></h1>
+      <p>Become Attractive With Shoes</p>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </main>
+  </section>
+  <div class="content" id="produk">
+    <h1 id="portofolio">Limited Editon</h1>
+    <div class="wrapper">
+      <div class="wrapper-holder">
+        <div id="slider-img-1"></div>
+        <div id="slider-img-2"></div>
+        <div id="slider-img-3"></div>
+        <div id="slider-img-4"></div>
+      </div>
+    </div>
+    <h1>Other Product</h1>
+  </div>
+  <div class="gallery">
+    
+    <div class="content">
+      <img src="./assets/img/col1.jpg" >
+      <p>DrMarten 1460.</p>
+      <h6>Rp.1.500.000</h6>
+      <button class="buy1">Buy Now</button>
+    </div>
+
+    <div class="content">
+      <img src="./assets/img/adidasjpg.jpg" >
+      <p>Adidas Samba.</p>
+      <h6>Rp.1.200.000</h6>
+      <button class="buy2">Buy Now</button>
+    </div>
+
+    <div class="content">
+      <img src="./assets/img/converseCT white.jpg" >
+      <p>Converse Chuck Taylor 70s ox.</p>
+      <h6>Rp.1.115.000</h6>
+      <button class="buy3">Buy Now</button>
+    </div>
+
+    <div class="content">
+      <img src="./assets/img/Newbalance.jpg" >
+      <p>New Balance 2002.</p>
+      <h6>Rp.1.350.000</h6>
+      <button class="buy4">Buy Now</button>
+    </div>
+
+    <div class="content">
+      <img src="./assets/img/Nikepng.png" >
+      <p>Nike Court Vision Low.</p>
+      <h6>Rp.770.000</h6>
+      <button class="buy5">Buy Now</button>
+    </div>
+
+    <div class="content">
+      <img src="./assets/img/vans.jpg" >
+      <p>Vans Old School Low.</p>
+      <h6>Rp.690.000</h6>
+      <button class="buy6">Buy Now</button>
+    </div>
+   
+
+  </div>
+  <section class="about" id="about">
+    <h1 class="text-center">BRAND</h1>
+    <div class="container text-center">
+        <div class="row" >
+          <div class="col">
+            <img src="./assets/img/logo1.jpg" alt="">
+          </div>
+         
+          <div class="col">
+           <img src="./assets/img/logo2.jpg" alt="">
+          </div>
+
+          <div class="col">
+            <img src="./assets/img/logo3.jpg" alt="">
+           </div>
+
+           <div class="col">
+            <img src="./assets/img/logo4.jpg" alt="">
+           </div>
+
+           <div class="col">
+            <img src="./assets/img/logo5.jpg" alt="">
+           </div>
+
+           <div class="col">
+            <img src="./assets/img/logo6.jpg" alt="">
+           </div>
+        </div>
+      </div>
+</section>
+  <main class="container" id="faq">
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <h6 class="border-bottom pb-2 mb-0">Frequently Asked Question</h6>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">Apakah Sepatu yang dijual Baru dan Original?</strong>
+          Sepatu yang kami dijual tentunya Original dan terpercaya, untuk kondisi sepatu kami menyediakan barang BNIB dan Second dengan harga yang berbeda.
+        </p>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">Apakah barang bisa dikirim keluar kota?</strong>
+          Kami menyediakan layanan pengiriman ke berbagai kota. waktu pengiriman bisa berbeda tergantung jarak daerah dan metode pengiriman.
+        </p>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">Apakah saya bisa Tukar/Tambah sepatu saya?</strong>
+          Kami menerima tawaran penjualan sepatu baik ditukar dengan uang maupun dengan barang. jika tertarik silahkan datang ke lokasi.
+        </p>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">Apakah produk Tersedia?</strong>
+          Produk yang kami miliki di situs kami senantiasa diperbarui, sehingga kami tidak dapat memastikan ketersediaan produk. 
+        </p>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">Apakah saya bisa memesan barang dulu sebelum datang?</strong>
+          kami melayani pemesanan melalui whatsapp. barang yang dipesan akan kami nyatat dalam nota dan kami tunggu konformasi pemesan ditempat untuk pengambilan barang.
+        </p>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">Apakah saya bisa mengembalikan barang jika tidak cocok?</strong>
+          Bisa, dengan ketentuan pengajuan pengembalian tidak boleh lebih dari 3 hari barang diterima dan catatan pembelian masih utuh.
+        </p>
+      </div>
+      <small class="d-block text-end mt-3">
+        <a href="#">All updates</a>
+      </small>
+    </div>
+  
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <h6 class="border-bottom pb-2 mb-0">Review</h6>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark">Sepatunya keren abis mantap</strong>
+          </div>
+          <span class="d-block">@Rei</span>
+        </div>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark">Sepatunya ori-ori dan pas dipakai aku</strong>
+           
+          </div>
+          <span class="d-block">@joy</span>
+        </div>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark">Pelayanan cepat banget</strong>
+          </div>
+          <span class="d-block">@erdjn</span>
+        </div>
+      </div>
+      <small class="d-block text-end mt-3">
+        <a href="#">All suggestions</a>
+      </small>
+    </div>
+  </main>
+  <section class="contact" id="contact">
+    <div class="contact-form">
+      <h1>Contact </h1>
+      <!-- link wa,ig,linkedin melalui icon -->
+      <p>Kirim kesan dan pesan untuk calceus store disini
+      </p>
+      <form action="">
+        <input type="" placeholder="Your Name" required>
+        <input type="email" name="email" id="" placeholder="E-mail" required>
+        <input type="" placeholder="Tulis Sesuatu" required>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Pesanmu" required>
+
+
+        </textarea>
+        <input type="submit" name="" value="submit" class="btn">
+      </form>
+    </div>
+    <div class="container mt-5">
+      <div class="judul-categori" style="background-color: grey; padding: 5px 10px; margin-right: -13px; margin-left: -13px;">
+        <h4 class="text-center" style="margin-top: 15px; margin-bottom: 15px;"><strong>MAKE YOUR OWN STYLE</strong></h4>
+      </div>
+      
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: -13px; margin-left: -13px;">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="card">
+                    <img src="./assets/img/grid1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Image 1</h5>
+                      <p class="card-text">Description of Image 1.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="card">
+                    <img src="./assets/img/grid2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Image 2</h5>
+                      <p class="card-text">Description of Image 2.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="card">
+                    <img src="./assets/img/grid6.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Image 3</h5>
+                      <p class="card-text">Description of Image 3.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="card">
+                    <img src="./assets/img/grid4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Image 4</h5>
+                      <p class="card-text">Description of Image 4.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="card">
+                    <img src="./assets/img/grid5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Image 5</h5>
+                      <p class="card-text">Description of Image 5.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="card">
+                    <img src="./assets/img/grid6.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Image 6</h5>
+                      <p class="card-text">Description of Image 6.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+  <div class="container footer" >
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Back to</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#home" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a href="#produk" class="nav-link p-0 text-body-secondary">Product</a></li>
+            <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="./New folder/login.html" class="nav-link p-0 text-body-secondary">Login</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Call Us</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Admin : <a href="https://wa.me/+6281315925285"></a>081315925285</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Store : <a href="https://maps.app.goo.gl/5x7D5MQp2qT8v88VA"></a>Condongcatr, Depok, Sleman, Yogyakarta</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Subscribe to our Store</h5>
+            <p>To get Information About US.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>© 2024 Calceus Store. All rights reserved.</p>
+        <ul class="social">
+          <li><a href="https://wa.me/+6281315925285"><i class="fa-brands fa-whatsapp"></i></a></li> 
+          <li><a href="https://www.instagram.com/jafarjepe?igsh=NWx4ZnhwMXRnbG4x"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+    
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
